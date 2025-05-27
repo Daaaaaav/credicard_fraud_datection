@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fraud Detection Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Fraud Detection Dashboard</h1>
+    <label class="switch">
+      <input type="checkbox" id="toggle-input">
+      <span class="slider round"></span>
+    </label>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab-button active" data-tab="dataset">Dataset</button>
+    <button class="tab-button" data-tab="train">Train</button>
+       <button class="tab-button" data-tab="combine">Combine</button>
+    <button class="tab-button" data-tab="evaluate">Evaluate</button>
+    <button class="tab-button" data-tab="input">Predict</button>
+    <button class="tab-button" data-tab="charts">Charts</button>
+  </nav>  
+
+  <div id="spinner-overlay" style="display: none;">
+    <div class="spinner"></div>
+  </div>  
+
+  <div id="loading-bar"></div>
+
+  <main>
+  <section id="dataset" class="tab-content active">
+    <div class="card">
+      <h2>Dataset Preview</h2>
+      <input type="file" id="fileInput" accept=".csv" />
+      <button class="btn" id="loadBtn" onclick="loadData()">Load Dataset</button>
+        <table>
+          <thead id="table-head"></thead>
+          <tbody id="table-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="train" class="tab-content">
+      <div class="card">
+        <h2>Train Classifier (RF)/Extract Features (IF/Auto)</h2>
+        <button onclick="trainRF()" class="btn">Random Forest</button>
+        <button onclick="trainISO()" class="btn">Isolation Forest</button>
+        <button class="btn" onclick="trainAutoencoder()">Autoencoders</button>
+         <div><h4>Pure Random Forest Training Results</h4>
+          <p>Accuracy: <span id="rf-accuracy">0.000</span></p>
+          <p>Precision: <span id="rf-precision">0.000</span></p>
+          <p>Recall: <span id="rf-recall">0.000</span></p>
+          <p>F1 Score: <span id="rf-f1_score">0.000</span></p>
+        </div>
+
+        <div><h4>Isolation Forest Loss Functions Results</h4>
+          <p>Mean Squared Error: <span id="iso-mse">0.000</span></p>
+          <p>Mean Absolute Error: <span id="iso-mae">0.000</span></p>
+          <p>Cross Entropy Loss: <span id="iso-cel">0.000</span></p>
+        </div>
+
+        <div><h4>Autoencoders Loss Functions Results</h4>
+          <p>Mean Squared Error: <span id="auto-mse">0.000</span></p>
+          <p>Mean Absolute Error: <span id="auto-mae">0.000</span></p>
+          <p>Cross Entropy Loss: <span id="auto-cel">0.000</span></p>
+        </div>
+      </div>
+      </section>
+    
+  <section id="combine" class="tab-content" >
+    <div class="card">
+      <h2>Combine Classifier into Feature Extraction</h2>
+      <button class="btn" onclick="trainCombined()">Train Model</button>
+      <button class="btn" onclick="predictCombined()">Top 100 Results</button>
+      <pre><h4>Combined Training Results</h4>
+      Accuracy: <span id="combined-accuracy"></span><br>
+      Precision: <span id="combined-precision"></span><br>
+      Recall: <span id="combined-recall"></span><br>
+      <div class="output-box" id="combined-output"></div></pre>
+    </div>
+  </section>
+
+<section id="evaluate" class="tab-content"> 
+  <div class="card">
+    <h2>Evaluate Models</h2>
+    <button onclick="evaluateRF()" class="btn">Pure Random Forest</button>
+    <button onclick="evaluateCombined()" class="btn">Combined Random Forest</button>
+    <div>
+      <h4>Pure Random Forest Evaluation</h4>
+      <p id="rfEvalResult" class="output-box"></p>
+    </div>
+    <div>
+      <h4>Combined Random Forest Evaluation</h4>
+      <p id="combinedEvalResult" class="output-box"></p>
+    </div>
+    <table id="model-eval-table">
+      <thead id="model-eval-head"></thead>
+      <tbody id="model-eval-body"></tbody>
+    </table>
+  </div>
+</section>
+
+  <section id="input" class="tab-content" >
+    <h2>Fraud Check from Manual Input</h2>
+      <form id="user-input-form">
+        <div id="input-fields"></div>
+        <label for="model-select">Model:</label>
+        <select id="model-select">
+          <option value="rf">Random Forest</option>
+          <option value="combined">Combined</option>
+        </select>
+        <button class="btn" type="submit">Predict</button>
+        <button class="btn" onclick="fillExample()">Use Example Data</button>
+        <button class="btn" onclick="fillFraudExample()">Use Fraud Example Data</button>
+      </form>
+    <div id="prediction-result"></div>
+  </section>
+
+ 
+  <section id="charts" class="tab-content">
+      <h2>Model Performance Comparison</h2>
+      <div class="card">
+        <button class="btn" onclick="trainAllModelsAndRenderChart()">Render Comparison Chart</button>
+        <canvas id="chart-comparison" width="600" height="200"></canvas>
+      </div>
+    </section>
+  
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
