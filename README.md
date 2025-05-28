@@ -7,7 +7,7 @@
 - Node.js (only if modifying JavaScript assets with build tools, otherwise optional)
 - Modern browser (such as Microsoft Edge, Google Chrome, Mozilla Firefox, etc. the first of which is the one used for testing)
 
-Python Libraries: Install all the dependencies using pip install -r requirements.txt on the terminal of your chosen Code Editor’s Terminal.
+Python Libraries: Install all the dependencies using pip install -r requirements.txt on the terminal of your chosen Code Editor.
 
 # Folder Structure
 fraud_detection_project/
