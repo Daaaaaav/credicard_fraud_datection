@@ -11,6 +11,7 @@ Python Libraries: Install all the dependencies using pip install -r requirements
 
 # Folder Structure
 fraud_detection_project/
+```
 ├── app.py                   # Main Flask application
 ├── preprocessing.py         # Data preprocessing logic
 ├── randomforest.py          # Random Forest and combined model logic
@@ -31,8 +32,7 @@ fraud_detection_project/
 │   └── uploads/             # User-uploaded CSV files
 
 └── current_dataset.txt      # Tracks the latest uploaded dataset
-
-
+```
 
 # Setup for Running
 1. Clone the Repository by typing the following into your chosen Code Editor’s Terminal:
