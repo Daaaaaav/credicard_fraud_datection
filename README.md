@@ -10,27 +10,28 @@
 Python Libraries: Install all the dependencies using pip install -r requirements.txt on the terminal of your chosen Code Editor.
 
 # Folder Structure
-📁 fraud_detection_project/
-├── app.py                    # Main Flask application
-├── preprocessing.py          # Data preprocessing logic
-├── randomforest.py           # Random Forest and combined model logic
-├── isolationforest.py        # Isolation Forest training script
-├── autoencoder_backend.py    # Autoencoder model training and utilities
-│
+fraud_detection_project/
+├── app.py                   # Main Flask application
+├── preprocessing.py         # Data preprocessing logic
+├── randomforest.py          # Random Forest and combined model logic
+├── isolationforest.py       # Isolation Forest training script
+├── autoencoder_backend.py   # Autoencoder model training and utilities
+
 ├── templates/
-│   └── index.html            # Frontend HTML UI
-│
+│   └── index.html           # Frontend HTML UI
+
 ├── static/
-│   ├── scripts.js            # JavaScript for training & prediction
-│   └── styles.css            # Optional CSS styling
-│
-├── models/                   # Folder to store trained models
-│
+│   ├── scripts.js           # JavaScript for training & prediction
+│   └── styles.css           # Optional CSS styling
+
+├── models/                  # Folder to store trained models
+
 ├── data/
-│   ├── processed/            # Preprocessed and intermediate data
-│   └── uploads/              # User-uploaded CSV files
-│
-└── current_dataset.txt       # Tracks the latest uploaded dataset
+│   ├── processed/           # Preprocessed and intermediate data
+│   └── uploads/             # User-uploaded CSV files
+
+└── current_dataset.txt      # Tracks the latest uploaded dataset
+
 
 
 # Setup for Running
