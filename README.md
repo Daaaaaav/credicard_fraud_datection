@@ -11,20 +11,35 @@ Python Libraries: Install all the dependencies using pip install -r requirements
 
 # Folder Structure
 fraud_detection_project/
+
 ├── app.py                   # Main Flask app
+
 ├── preprocessing.py         # Preprocessing logic
+
 ├── randomforest.py          # Random Forest + Combined model logic
+
 ├── isolationforest.py       # Isolation Forest training
+
 ├── autoencoder_backend.py   # Autoencoder training and utility functions
+
 ├── templates/
+
 │   └── index.html           # Frontend UI
+
 ├── static/
+
 │   ├── scripts.js           # JS logic for training & prediction
+
 │   └── styles.css           # Optional styling
+
 ├── models/                  # Trained models will be saved here
+
 ├── data/
+
 │   ├── processed/           # Preprocessed and intermediate data
+
 │   └── uploads/             # User-uploaded CSVs
+
 └── current_dataset.txt      # Tracks last uploaded dataset
 
 # Setup for Running
@@ -37,3 +52,5 @@ fraud_detection_project/
 4. Open a browser of your choice and go to http://127.0.0.1:5005.
 5. Freely navigate the dashboard, upload and preprocess any chosen singular dataset, and check for fraud detections as you wish!
 6. If any resulting training model were to be corrupted or unidentified by the system, do not fret, and just retrain the respective model alone.
+
+# Further Reports:  
