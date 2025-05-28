@@ -53,4 +53,5 @@ fraud_detection_project/
 5. Freely navigate the dashboard, upload and preprocess any chosen singular dataset, and check for fraud detections as you wish!
 6. If any resulting training model were to be corrupted or unidentified by the system, do not fret, and just retrain the respective model alone.
 
-# Further Reports:  
+# Further Reports
+https://docs.google.com/document/d/1HmWWhmZWT2dRR9gsvY1PLjA76K11B8ZPTiensDoEDig/edit?usp=sharing
