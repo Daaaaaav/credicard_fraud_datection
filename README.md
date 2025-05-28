@@ -11,8 +11,8 @@ Python Libraries: Install all the dependencies using pip install -r requirements
 
 # Folder Structure
 fraud_detection_project/
-├── app.py                   # Main Flask app
-├── preprocessing.py         # Preprocessing logic
+├── app.py                   # Main Flask app	
+├── preprocessing.py         # Preprocessing logic	
 ├── randomforest.py          # Random Forest + Combined model logic
 ├── isolationforest.py       # Isolation Forest training
 ├── autoencoder_backend.py   # Autoencoder training and utility functions
