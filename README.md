@@ -44,13 +44,21 @@ fraud_detection_project/
 
 # Setup for Running
 1. Clone the Repository by typing the following into your chosen Code Editor’s Terminal:
+
 *git clone https://github.com/yourusername/creditcard-fraud-detection.git*
+
 *cd creditcard-fraud-detection*
+
 2. Start the Flask app by typing the following into your chosen Code Editor’s Terminal: 
+
 *python app.py*
+
 3. Afterwards, the app will run locally at http://127.0.0.1:5005. 
+
 4. Open a browser of your choice and go to http://127.0.0.1:5005.
+
 5. Freely navigate the dashboard, upload and preprocess any chosen singular dataset, and check for fraud detections as you wish!
+
 6. If any resulting training model were to be corrupted or unidentified by the system, do not fret, and just retrain the respective model alone.
 
 # Further Reports
